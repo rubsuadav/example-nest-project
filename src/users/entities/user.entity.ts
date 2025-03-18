@@ -25,4 +25,7 @@ export class User {
 
   @Column({ enum: ['admin', 'user'], default: 'user' })
   role: string;
+
+  @Column({ nullable: true })
+  avatar: string;
 }
