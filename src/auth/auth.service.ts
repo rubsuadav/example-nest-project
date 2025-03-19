@@ -3,14 +3,14 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
 // local imports
-import { CreateUserDto } from 'src/users/dto/create-user.dto';
-import { User } from 'src/users/entities/user.entity';
+import { CreateUserDto } from '../users/dto/create-user.dto';
+import { User } from '../users/entities/user.entity';
 import {
   checkEmailAndPasswordEntered,
   checkPassword,
   validateEmailPasswordAndRole
-} from 'src/validations/validate';
-import { generateHashPassword, generateJwtToken } from 'src/utils/utils';
+} from '../validations/validate';
+import { generateHashPassword, generateJwtToken } from '../utils/utils';
 
 @Injectable()
 export class AuthService {
