@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Post } from '../../posts/entities/post.entity';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({ name: 'users' })
 export class User {
@@ -28,4 +29,10 @@ export class User {
 
   @Column({ nullable: true })
   avatar: string;
+
+  @OneToMany(() => Post, (post) => post.owner, {
+    nullable: true,
+    onDelete: 'CASCADE'
+  })
+  posts: Post[];
 }
